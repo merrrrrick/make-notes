@@ -48,15 +48,15 @@ router.post(
     } catch (error) {
       if (error.code === 11000) {
         // Duplicate key error
-        return res.status(400).json({ error: "Email already exists" });
+        return res.status(400).json({ success: false, error: "Email already exists" });
       }
       console.error(error.message);
-      res.status(500).json({ error: " Internal Server error" });
+      res.status(500).json({ success: false, error: "Internal Server error" });
     }
   }
 );
 
-//Rote 2: Authenticate a user using: POST "api/auth/login". No login required
+//Route 2: Authenticate a user using: POST "api/auth/login". No login required
 router.post(
   "/login",
   [
@@ -68,7 +68,7 @@ router.post(
     //If there are errors, return Bad request and the errors
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ success: false, errors: errors.array() });
     }
 
     const { email, password } = req.body;
@@ -77,7 +77,7 @@ router.post(
       if (!user) {
         return res
           .status(400)
-          .json({ error: "Please try to login with correct credentials" });
+          .json({ success: false, error: "Please try to login with correct credentials" });
       }
 
       const passwordCompare = await bcrypt.compare(password, user.password);
@@ -86,7 +86,7 @@ router.post(
       if (!passwordCompare) {
         success = false;
         console.log('errors')
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ success: false, error: "Please try to login with correct credentials" });
       }
       const data = {
         user: {
@@ -98,20 +98,20 @@ router.post(
       res.json({ success, authToken });
     } catch (error) {
       console.log(error.message);
-      res.status(500).send("Internal Server Error");
+      res.status(500).json({ success: false, error: "Internal Server Error" });
     }
   }
 );
 
-//Rote 3: Get looged in user deetails: POST "api/auth/getuser". Login required
+//Route 3: Get logged in user details: POST "api/auth/getuser". Login required
 router.post("/getuser", fetchuser, async (req, res) => {
   try {
     userId = req.user.id;
     const user = await User.findById(userId).select("-password");
-    res.send(user);
+    res.json(user);
   } catch (error) {
     console.log(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).json({ success: false, error: "Internal Server Error" });
   }
 });
 

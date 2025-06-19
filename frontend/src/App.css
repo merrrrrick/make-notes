@@ -4,7 +4,11 @@
 }
 
 body {
+<<<<<<< HEAD
   background: linear-gradient(300deg, #000000 -10%, #382aa6 110%);
+=======
+  background: linear-gradient(300deg, #000000 -10%, #9e1506 110%);
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
   min-height: 100vh;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -78,11 +82,14 @@ body {
 
 .add-note {
   width: 300px;
+<<<<<<< HEAD
   border: 2px solid black;
   padding: 12px;
   border-radius: 12px;
   background-color: rgba(255, 255, 255, 0.877);
   box-shadow: 5px 4px 10px rgba(73, 73, 73, 0.277);
+=======
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
 }
 
 .add-note-form input {
@@ -95,24 +102,41 @@ body {
 }
 
 .add-note-form button {
+<<<<<<< HEAD
   background-color: rgb(55, 26, 163);
+=======
+  background-color: black;
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
   color: white;
   border: none;
 }
 
 .add-note-form button:disabled {
+<<<<<<< HEAD
   background-color: rgb(55, 26, 163);
   color: whitesmoke;
+=======
+  background-color: rgb(196, 194, 194);
+  color: black;
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
   border: none;
 }
 
 .add-note-form button:hover {
   cursor: pointer;
+<<<<<<< HEAD
   background-color: rgb(55, 26, 163);
 }
 
 .add-note-form button:active {
   background-color: rgb(55, 26, 163);
+=======
+  background-color: rgb(53, 52, 52);
+}
+
+.add-note-form button:active {
+  background-color: rgb(53, 52, 52);
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
 }
 
 .edit {
@@ -122,8 +146,12 @@ body {
 
 .card {
   box-shadow: 5px 4px 10px rgba(73, 73, 73, 0.277);
+<<<<<<< HEAD
   border: 2px solid black;
   border-radius: 12px;
+=======
+  border: none;
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
   background-color: rgba(255, 255, 255, 1);
 }
 
@@ -182,7 +210,10 @@ body {
   gap: 3px;
   border: none;
   background-color: rgba(73, 73, 73, 0);
+<<<<<<< HEAD
   color: white;
+=======
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
 }
 
 .tag {
@@ -192,7 +223,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+<<<<<<< HEAD
   background-color: rgb(39, 6, 159);
+=======
+  background-color: #851d11;
+>>>>>>> a3967accfd7b634cd4c9f5d559b6a0755d476dbf
   border-radius: 15px;
   margin-bottom: 10px;
   color: white;

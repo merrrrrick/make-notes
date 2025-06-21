@@ -197,6 +197,7 @@ body {
 
 .f1-text{
   color: rgba(255, 255, 255, 0.877);
+  padding-left: 2px;
 }
 
 .tag {
